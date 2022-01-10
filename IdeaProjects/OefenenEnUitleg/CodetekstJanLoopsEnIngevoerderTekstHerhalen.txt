@@ -1,0 +1,59 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class OefHerhaalBoodschap {
+    public static void main(String[] args) {
+        System.out.println("Boodschap te printen:");
+        Scanner scanner = new Scanner(System.in);
+
+        String boodschap = scanner.nextLine();
+        int aantal = scanner.nextInt();
+
+        //showMessageMultipleTimes(boodschap, aantal);
+
+        String s = generateMessageMultipleTimes3(boodschap, aantal);
+        System.out.println(s);
+
+        System.out.println(generateMessageMultipleTimes3(boodschap, aantal));
+    }
+
+    public static void showMessageMultipleTimes(String message, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.println(message);
+        }
+    }
+
+    public static String generateMessageMultipleTimes(String message, int count) {
+        String result = "";
+        for (int i = 0; i < count; i++) {
+            result += message + "\n";
+        }
+
+        return result;
+    }
+
+    public static String generateMessageMultipleTimes2(String message, int count) {
+        String result = "";
+
+        int i = 0; //int
+        do {
+            result += message + "\n";
+            i++; //iteration
+        } while (i < count); //condition
+
+        return result;
+    }
+
+    public static String generateMessageMultipleTimes3(String message, int count) {
+        String result = "";
+
+        int i = 0; //init
+        while (i < count) { //condition
+            result += message + "\n"; //action
+            i++; //iteration
+        }
+
+        return result;
+    }
+}
